@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BITD E-SUMMIT 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+.site-footer{
+    text-align:center;
+    padding:30px 10px;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(6px);
+    border-top:1px solid rgba(255,0,128,0.3);
+}
+
+.site-footer p{
+    font-size:0.85rem;
+    color:#ff0080;
+    letter-spacing:1px;
+    text-shadow:0 0 8px #ff0080;
+}
+
+.card{
+    text-decoration:none;
+    color:white;
+}
+.register-label{
+    margin-top:15px;
+    padding:6px 12px;
+    border:1px solid #ff0080;
+    border-radius:20px;
+    font-size:0.8rem;
+    display:inline-block;
+    transition:0.3s;
+}
+
+/* ================= SECTION TITLE COLORS ================= */
+
+/* EVENTS */
+.section-title{
+    animation: glowPulse 3s infinite alternate;
+}
+
+@keyframes glowPulse{
+    from{
+        text-shadow:0 0 10px currentColor;
+    }
+    to{
+        text-shadow:0 0 25px currentColor;
+    }
+}
+/* ================= NEON LIGHT SYSTEM ================= */
+
+.neon-light{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:0;
+
+    background:
+        radial-gradient(circle at 50% 50%, rgba(255,0,128,0.15), transparent 40%),
+        radial-gradient(circle at 30% 70%, rgba(0,245,255,0.12), transparent 40%);
+
+    mix-blend-mode: screen;
+    transition: background 0.2s ease;
+}
+
+button{
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 15px #00f5ff;
+}
+
+section{
+    transition: all 0.6s ease;
+}
+
+.carousel{
+  display:flex;
+  gap:20px;
+  transition: transform 0.5s ease;
+}
+.reveal.active{
+    filter: blur(0);
+}
+
+.reveal{
+    filter: blur(6px);
+}
+
+.card:hover .register-label{
+    background:#ff0080;
+    color:black;
+    box-shadow:0 0 10px #ff0080;
+}
+
+
+.glitch{
+    position:relative;
+    color:#ff0080;
+    animation: flicker 2s infinite;
+}
+
+@keyframes flicker{
+    0%,18%,22%,25%,53%,57%,100%{
+        text-shadow:
+        0 0 10px #ff0080,
+        0 0 20px #ff0080;
+    }
+    20%,24%,55%{
+        text-shadow:none;
+    }
+}
+
+.card{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.card:hover{
+    transform: rotateY(8deg) rotateX(5deg) scale(1.05);
+    box-shadow:
+        0 0 15px #00f5ff,
+        0 0 40px #00f5ff;
+}
+
+.menu-icon{
+    font-size:26px;
+    color:#ff0080;
+    cursor:pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon.rotate{
+    transform: rotate(180deg);
+}
+html{scroll-behavior:smooth;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Orbitron',sans-serif;
+color:white;
+overflow-x:hidden;
+background:black;
+}
+
+
+.neon-light{
+    animation: neonPulse 6s infinite alternate;
+}
+
+@keyframes neonPulse{
+    0%{
+        filter: brightness(1);
+    }
+    100%{
+        filter: brightness(1.3);
+    }
+}
+
+body > *{
+    position:relative;
+    z-index:1;
+}
+
+
+.card{
+    opacity:0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+.sponsor-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+}
+/* ================= CLEAN SPONSOR GRID ================= */
+
+.sponsor-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:50px;
+    max-width:700px;
+    margin:60px auto;
+}
+
+/* item */
+.sponsor-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:20px;
+}
+
+/* logos */
+.sponsor-item img{
+    width:110px;
+    height:auto;
+    object-fit:contain;
+}
+
+/* brand name */
+.sponsor-item p{
+    font-size:0.9rem;
+    letter-spacing:1px;
+    color:#ccc;
+}
+
+/* remove hover effects */
+.sponsor-item:hover{
+    transform:none;
+    box-shadow:none;
+}/* Angel One glow */
+.sponsor-card:nth-child(3) .sponsor-logo{
+    filter: drop-shadow(0 0 10px #2962ff);
+}
+
+.sponsor-card:nth-child(3):hover .sponsor-logo{
+    filter: drop-shadow(0 0 20px #00f5ff);
+}
+
+/* UDEFY glow (orange sci-fi vibe) */
+.sponsor-card:nth-child(4) .sponsor-logo{
+    filter: drop-shadow(0 0 12px #ff6a00);
+}
+
+.sponsor-card:nth-child(4):hover .sponsor-logo{
+    filter: drop-shadow(0 0 25px #ff0080);
+}
+
+/* Startup Grind glow (red identity) */
+.sponsor-card:nth-child(5) .sponsor-logo{
+    filter: drop-shadow(0 0 12px #ff2b2b);
+}
+
+.sponsor-card:nth-child(5):hover .sponsor-logo{
+    filter: drop-shadow(0 0 25px #ff0080);
+}
+
+/* ALWAYS-ON GLOW */
+
+/* StockGro */
+.stockgro img{
+    filter: drop-shadow(0 0 12px #ff0080);
+}
+
+/* WobbleLab */
+.wobblelab img{
+    filter: drop-shadow(0 0 12px #8a2be2);
+}
+
+/* Angel One */
+.angelone img{
+    filter: drop-shadow(0 0 12px #2962ff);
+}
+
+/* UDEFY */
+.udefy img{
+    filter: drop-shadow(0 0 12px #ff6a00);
+}
+
+/* Startup Grind */
+.startupgrind img{
+    filter: drop-shadow(0 0 12px #ff2b2b);
+}
+
+.sponsor-item:last-child{
+    grid-column: span 2;
+    justify-self:center;
+}
+/* ================= BUTTON GLOW ================= */
+
+#enterBtn{
+    position:relative;
+    overflow:hidden;
+}
+
+/* glow pulse */
+#enterBtn.glow{
+    box-shadow: 
+        0 0 10px #00f5ff,
+        0 0 20px #00f5ff,
+        0 0 40px #00f5ff;
+    transform: scale(1.05);
+}
+
+/* energy ripple */
+#enterBtn::after{
+    content:'';
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:0;
+    height:0;
+    background:rgba(0,245,255,0.3);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    opacity:0;
+}
+
+#enterBtn.ripple::after{
+    animation:rippleEffect 0.6s ease-out;
+}
+
+@keyframes rippleEffect{
+    0%{
+        width:0;
+        height:0;
+        opacity:0.8;
+    }
+    100%{
+        width:300px;
+        height:300px;
+        opacity:0;
+    }
+}
+/* ================= INTRO ================= */
+
+#intro{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    z-index:99999; /* ABOVE EVERYTHING */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+#intro video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* 📱 MOBILE FIX */
+@media(max-width:768px){
+    #intro video{
+        object-fit:contain;
+        background:black; /* fills empty space cleanly */
+    }
+}
+
+#intro{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* skip button */
+.skip-btn{
+    position:absolute;
+    bottom:30px;
+    right:30px;
+    padding:10px 20px;
+    border:1px solid #00f5ff;
+    color:#00f5ff;
+    cursor:pointer;
+    font-size:14px;
+    backdrop-filter:blur(5px);
+    transition:0.3s;
+    z-index:100000;
+}
+
+.skip-btn:hover{
+    background:#00f5ff;
+    color:black;
+}
+
+/* smooth fade */
+.fade-out{
+    animation:fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut{
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+/* ================= FULL VIDEO BACKGROUND ================= */
+
+.bg-video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-5;
+filter:brightness(0.6) contrast(1.1);
+animation:slowZoom 30s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom{
+from{transform:scale(1);}
+to{transform:scale(1.05);}
+}
+
+.video-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(
+rgba(0,0,0,0.5),
+rgba(0,0,0,0.85)
+);
+z-index:-4;
+}
+
+button{
+    font-size:clamp(0.8rem,2vw,1rem);
+}
+
+@media(max-width:600px){
+    .navbar{
+        padding:12px 15px;
+    }
+}
+/* ================= NAVIGATION ================= */
+
+.navbar{
+position:fixed;
+top:0;width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(8px);
+z-index:1000;
+}
+.logo{color:#00f5ff;}
+.menu-icon{font-size:26px;color:#ff0080;cursor:pointer;}
+.nav-links{
+list-style:none;
+position:fixed;
+top:0;right:-100%;
+width:250px;height:100%;
+background:black;
+padding-top:80px;
+transition:.4s;
+}
+.nav-links li{margin:20px 0;text-align:center;}
+.nav-links a{color:#00f5ff;text-decoration:none;}
+.nav-active{right:0;}
+@media(max-width:768px){.nav-links{width:100%;}}
+
+/* ================= HERO ================= */
+.hero{
+    min-height:100vh;
+    padding:80px 20px 40px;
+}
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+}
+.hero h1{
+font-size:clamp(2rem,6vw,4rem);
+color:#ff0080;
+text-shadow:0 0 20px #ff0080;
+}
+.hero p{margin-top:10px;font-size:clamp(.9rem,2.5vw,1.2rem);}
+button{
+margin-top:20px;
+padding:12px 30px;
+border:2px solid #00f5ff;
+background:transparent;
+color:#00f5ff;
+cursor:pointer;
+}
+button:hover{background:#00f5ff;color:black;}
+
+.countdown{
+margin-top:20px;
+font-size:clamp(1rem,3vw,1.8rem);
+color:#ff0080;
+text-shadow:0 0 10px #ff0080,0 0 20px #ff0080;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:clamp(60px,8vw,120px) clamp(16px,5vw,80px);
+    max-width:1400px;
+    margin:auto;
+}
+.section-title{
+color:#ff0080;
+font-size:clamp(1.8rem,4vw,2.5rem);
+margin-bottom:40px;
+}
+/* FIXED SECTION COLORS */
+
+.section-title.events-title{ 
+    color:#ff0080; 
+}
+
+.section-title.speakers-title{ 
+    color:#00f5ff; 
+}
+
+.section-title.sponsors-title{ 
+    color:#8a2be2; 
+}
+
+.section-title.team-title{ 
+    color:#ffaa00; 
+}
+
+/* ================= CAROUSEL ================= */
+
+.carousel-container{
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.carousel-wrapper{
+overflow:hidden;
+width:90%;
+}
+.carousel{
+    display:flex;
+    gap:20px;
+}
+
+/* WobbleLab special glow */
+.sponsor-card:nth-child(2) .sponsor-logo{
+    filter: drop-shadow(0 0 10px #8a2be2);
+}
+
+.sponsor-card:nth-child(2):hover .sponsor-logo{
+    filter: drop-shadow(0 0 20px #00f5ff);
+}
+
+.card{
+    flex:0 0 calc(33.333% - 20px);
+    padding:25px;
+    margin:10px 0;
+}
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #00f5ff;
+}
+.arrow{
+background:#ff0080;
+border:none;
+color:white;
+font-size:26px;
+padding:10px 15px;
+cursor:pointer;
+box-shadow:0 0 15px #ff0080;
+z-index:10;
+}
+.arrow:hover{background:#00f5ff;}
+.left{margin-right:10px;}
+.right{margin-left:10px;}
+
+.dots{text-align:center;margin-top:20px;}
+.dots span{
+height:10px;width:10px;
+margin:5px;
+background:#888;
+border-radius:50%;
+display:inline-block;
+cursor:pointer;
+}
+.dots .active{
+background:#ff0080;
+box-shadow:0 0 10px #ff0080;
+}
+
+@media(max-width:992px){
+    .card{
+        flex:0 0 calc(50% - 20px);
+    }
+}
+
+@media(max-width:600px){
+    .card{
+        flex:0 0 100%;
+    }
+}
+footer{text-align:center;padding:40px;color:#ccc;}
+</style>
+</head>
+
+<body>
+
+<div class="neon-light"></div>
+<!-- ================= INTRO OVERLAY ================= -->
+<div id="intro">
+    <video id="introVideo" autoplay muted playsinline>
+        <source src="Retro_Futuristic_Synthwave_Intro_Animation.mp4" type="video/mp4">
+    </video>
+
+    <div class="skip-btn" onclick="skipIntro()">SKIP</div>
+</div>
+
+<!-- VIDEO BACKGROUND -->
+<video autoplay muted loop playsinline class="bg-video">
+<source src="bg-video.mp4" type="video/mp4">
+</video>
+<div class="video-overlay"></div>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+<div class="logo">BITD E-SUMMIT 2026</div>
+<div class="menu-icon" id="menuIcon" onclick="toggleMenu()">☰</div>
+<ul class="nav-links" id="navLinks">
+<li><a href="#events" onclick="toggleMenu()">Events</a></li>
+<li><a href="#speakers" onclick="toggleMenu()">Speakers</a></li>
+<li><a href="#sponsors" onclick="toggleMenu()">Sponsors</a></li>
+<li><a href="#team" onclick="toggleMenu()">Team</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<h1 class="glitch">BITD E-SUMMIT 2026</h1>
+<p>Entrepreneurship Development Cell, BITD presents</p>
+
+<a href="#events">
+    <button id="enterBtn">ENTER THE SUMMIT</button>
+</a>
+
+</div>
+<section class="countdown-section">
+    <h2 class="section-title">MARK YOUR CALENDERS !</h2>
+    <div id="countdown" class="countdown"></div>
+</section>
+
+
+<!-- EVENTS -->
+<section id="events">
+<h2 class="section-title events-title">Event Matrix</h2>
+<div class="carousel-container">
+<button class="arrow left" onclick="slidePrev('eventCarousel')">&#10094;</button>
+
+<div class="carousel-wrapper">
+<div class="carousel" id="eventCarousel">
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScvtLb7XtljbCHgg9waLDJo8-jqo_Xjw9QqfcoUz8xHhsbYUA/viewform?usp=dialog" target="_blank" class="card">
+<h3>🎤 Speaker Conclave</h3>
+<p><strong>Voices That Shape the Future.</strong></p>
+<p>Visionary founders and leaders share insights on startups, funding, and scaling ideas into empires.</p>
+<span class="register-label">Explore →</span>
+</a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScvtLb7XtljbCHgg9waLDJo8-jqo_Xjw9QqfcoUz8xHhsbYUA/viewform?usp=dialog" target="_blank" class="card">
+<h3>💰 100 Rs Venture</h3>
+<p><strong>From ₹100 to Reality.</strong></p>
+<p>Build a profitable business starting with just ₹100. Hustle, strategy, and creativity win.</p>
+<span class="register-label">Compete →</span>
+</a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScvtLb7XtljbCHgg9waLDJo8-jqo_Xjw9QqfcoUz8xHhsbYUA/viewform?usp=dialog" target="_blank" class="card">
+<h3>🛠 Hack-a-Thon</h3>
+<p><strong>Code. Create. Conquer.</strong></p>
+<p>Build innovative solutions under pressure and compete with the best tech minds.</p>
+<span class="register-label">Build Now →</span>
+</a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScvtLb7XtljbCHgg9waLDJo8-jqo_Xjw9QqfcoUz8xHhsbYUA/viewform?usp=dialog" target="_blank" class="card">
+<h3>🔐 Escape Room</h3>
+<p><strong>Think Fast. Escape Faster.</strong></p>
+<p>Solve puzzles, crack codes, and escape before time runs out.</p>
+<span class="register-label">Enter →</span>
+</a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScvtLb7XtljbCHgg9waLDJo8-jqo_Xjw9QqfcoUz8xHhsbYUA/viewform?usp=dialog" target="_blank" class="card">
+<h3>🎮 BGMI Showdown</h3>
+<p><strong>Battle for Supremacy.</strong></p>
+<p>Survive, strategize, and dominate the battleground with your squad.</p>
+<span class="register-label">Drop In →</span>
+</a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScvtLb7XtljbCHgg9waLDJo8-jqo_Xjw9QqfcoUz8xHhsbYUA/viewform?usp=dialog" target="_blank" class="card">
+<h3>🎯 Valorant Mania</h3>
+<p><strong>Precision Meets Strategy.</strong></p>
+<p>Outplay your opponents in this tactical shooter showdown.</p>
+<span class="register-label">Play Now →</span>
+</a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScvtLb7XtljbCHgg9waLDJo8-jqo_Xjw9QqfcoUz8xHhsbYUA/viewform?usp=dialog" target="_blank" class="card">
+<h3>🗺 Treasure Hunt</h3>
+<p><strong>Clues. Chaos. Victory.</strong></p>
+<p>Race across campus solving clues to uncover the final treasure.</p>
+<span class="register-label">Start Hunt →</span>
+</a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScvtLb7XtljbCHgg9waLDJo8-jqo_Xjw9QqfcoUz8xHhsbYUA/viewform?usp=dialog" target="_blank" class="card">
+<h3>📈 Virtual Stock Exchange</h3>
+<p><strong>Trade Like a Pro.</strong></p>
+<p>Test your investment instincts in a real-time trading simulation.</p>
+<span class="register-label">Trade Now →</span>
+</a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScvtLb7XtljbCHgg9waLDJo8-jqo_Xjw9QqfcoUz8xHhsbYUA/viewform?usp=dialog" target="_blank" class="card">
+<h3>💃 Dance Competition</h3>
+<p><strong>Own the Stage.</strong></p>
+<p>Show your moves and energy in a high-voltage dance battle.</p>
+<span class="register-label">Perform →</span>
+</a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScvtLb7XtljbCHgg9waLDJo8-jqo_Xjw9QqfcoUz8xHhsbYUA/viewform?usp=dialog" target="_blank" class="card">
+<h3>🎙 Open Mic</h3>
+<p><strong>Your Voice. Your Moment.</strong></p>
+<p>Express yourself through poetry, music, or stand-up.</p>
+<span class="register-label">Take the Mic →</span>
+</a>
+
+</div></div>
+<button class="arrow right" onclick="slideNext('eventCarousel')">&#10095;</button>
+</div>
+<div class="dots" id="eventDots"></div>
+</section>
+
+<section id="speakers">
+<h2 class="section-title speakers-title">Our Speakers</h2>
+<div class="carousel-container">
+<div class="dots" id="speakerDots"></div>
+
+<div class="carousel-wrapper">
+<div class="carousel" id="speakerCarousel">
+
+<div class="card">
+<h3>Speakers</h3>
+<p><strong>TO BE REVEALED SOON</p>
+
+</div>
+
+
+</div>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<section id="sponsors">
+<h2 class="section-title sponsors-title">Our Sponsors</h2>
+
+<div class="carousel-container">
+<div class="carousel-wrapper">
+<div class="carousel" id="sponsorCarousel">
+
+<div class="sponsor-grid">
+
+    <div class="sponsor-item stockgro">
+        <img src="stockgro.png">
+        <p>StockGro</p>
+    </div>
+
+    <div class="sponsor-item wobblelab">
+        <img src="wobble.jpeg">
+        <p>WobbleLab</p>
+    </div>
+
+    <div class="sponsor-item angelone">
+        <img src="angel.png">
+        <p>Angel One</p>
+    </div>
+
+    <div class="sponsor-item udefy">
+        <img src="udefy.jpg">
+        <p>[U]DEFY</p>
+    </div>
+
+    <div class="sponsor-item startupgrind">
+        <img src="grind.jpeg">
+        <p>Startup Grind</p>
+    </div>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="team">
+<h2 class="section-title team-title">Our Team</h2>
+<div class="carousel-container">
+<button class="arrow left" onclick="slidePrev('teamCarousel')">&#10094;</button>
+
+<div class="carousel-wrapper">
+<div class="carousel" id="teamCarousel">
+
+<div class="card">
+<h3>Mahattava Sahu</h3>
+<p><strong>President</strong></p>
+<p>Leading the vision and execution of BITD E-SUMMIT 2026.</p>
+</div>
+
+<div class="card">
+<h3>Sneha</h3>
+<p><strong>Vice president</strong></p>
+<p>Managing cross-functional coordination and operations.</p>
+</div>
+
+<div class="card">
+<h3>Suman Mishra</h3>
+<p><strong>Content</strong></p>
+<p>Bringing out the best content.</p>
+</div>
+  
+<div class="card">
+<h3>Aayushman Sahu</h3>
+<p><strong>Marketing Head</strong></p>
+<p>Driving outreach, branding, and promotional campaigns.</p>
+</div>
+
+
+<div class="card">
+<h3>Arsh</h3>
+<p><strong>Design Head</strong></p>
+<p>Creating visual identity and creative assets.</p>
+</div>
+
+<div class="card">
+<h3>Pooja</h3>
+<p><strong>Design Head</strong></p>
+<p>Creating visual identity and creative assets.</p>
+</div>
+
+<div class="card">
+<h3>Tishya</h3>
+<p><strong>Design Head</strong></p>
+<p>Creating visual identity and creative assets.</p>
+</div>
+  
+<div class="card">
+<h3>Ayush Pradhan</h3>
+<p><strong>Technical Head</strong></p>
+<p>Managing website systems and technical infrastructure.</p>
+</div>
+
+<div class="card">
+<h3>Uday Kanwar</h3>
+<p><strong>Technical Head</strong></p>
+<p>Managing website systems and technical infrastructure.</p>
+</div>
+  
+<div class="card">
+<h3>Mahir Pawar</h3>
+<p><strong>Public Relations</strong></p>
+<p>Handling media communication and outreach.</p>
+</div>
+
+<div class="card">
+<h3>Bhavesh Sahu</h3>
+<p><strong>Lead-Videography & Production</strong></p>
+<p>Creating Cinematic Masterpiece</p>
+</div>
+
+<div class="card">
+<h3>Tanay Nag</h3>
+<p><strong>Co-Lead-Videography & Production</strong></p>
+<p>Creating Cinematic Masterpiece</p>
+</div>
+
+<div class="card">
+<h3>Sneha</h3>
+<p><strong>Lead-Social Media</strong></p>
+<p>Voice of the club</p>
+</div>
+
+<div class="card">
+<h3>Srestha</h3>
+<p><strong>Lead-Social Media</strong></p>
+<p>Voice of the company</p>
+</div>
+
+</div>
+</div>
+
+<button class="arrow right" onclick="slideNext('teamCarousel')">&#10095;</button>
+</div>
+
+<div class="dots" id="teamDots"></div>
+</section>
+
+
+<footer class="site-footer">
+    <p>© ED-CELL 2026-27 | BITD E-SUMMIT</p>
+</footer>
+
+<script>
+function toggleMenu(){
+    const nav = document.getElementById("navLinks");
+    const icon = document.getElementById("menuIcon");
+
+    nav.classList.toggle("nav-active");
+    icon.classList.toggle("rotate");
+
+    icon.innerHTML = nav.classList.contains("nav-active") ? "✖" : "☰";
+}
+
+// Countdown
+const eventDate = new Date("April 07, 2026 00:00:00").getTime();
+
+setInterval(function(){
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if(distance < 0){
+        document.getElementById("countdown").innerHTML = "Event Started!";
+        return;
+    }
+
+    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        d + " Days " + h + " Hours " + m + " Minutes " + s + " Seconds";
+
+}, 1000);
+
+
+// Carousel Logic
+let carousels={};
+function initCarousel(id,dotsId){
+const carousel=document.getElementById(id);
+const dotsContainer=document.getElementById(dotsId);
+const cards=carousel.children;
+let index=0;
+let visible=getVisibleCards();
+let total=cards.length;
+carousels[id]={index,visible,total};
+
+let pages=Math.ceil(total/visible);
+dotsContainer.innerHTML="";
+for(let i=0;i<pages;i++){
+let dot=document.createElement("span");
+dot.onclick=()=>goToSlide(id,i);
+dotsContainer.appendChild(dot);
+}
+updateDots(id,dotsId);
+
+
+}
+
+function getVisibleCards(){
+if(window.innerWidth<=600)return 1;
+if(window.innerWidth<=992)return 2;
+return 3;
+}
+
+function slideNext(id){
+let obj=carousels[id];
+obj.visible=getVisibleCards();
+obj.index+=obj.visible;
+if(obj.index>=obj.total)obj.index=0;
+updateCarousel(id);
+}
+
+function slidePrev(id){
+let obj=carousels[id];
+obj.visible=getVisibleCards();
+obj.index-=obj.visible;
+if(obj.index<0)obj.index=Math.floor((obj.total-1)/obj.visible)*obj.visible;
+updateCarousel(id);
+}
+
+function goToSlide(id,page){
+let obj=carousels[id];
+obj.visible=getVisibleCards();
+obj.index=page*obj.visible;
+updateCarousel(id);
+}
+
+function updateCarousel(id){
+    let obj = carousels[id];
+    const carousel = document.getElementById(id);
+
+    if(!carousel || !obj) return;
+
+    const card = carousel.querySelector(".card");
+    if(!card) return;
+
+    const cardWidth = card.offsetWidth + 20;
+
+    carousel.style.transform =
+        `translateX(-${obj.index * cardWidth}px)`;
+
+    updateDots(id, id.replace("Carousel","Dots"));
+}
+function updateDots(id,dotsId){
+let obj=carousels[id];
+let dots=document.getElementById(dotsId).children;
+let activePage=Math.floor(obj.index/obj.visible);
+for(let i=0;i<dots.length;i++){
+dots[i].classList.remove("active");
+}
+if(dots[activePage])dots[activePage].classList.add("active");
+}
+
+window.onload=function(){
+initCarousel("eventCarousel","eventDots");
+initCarousel("speakerCarousel","speakerDots");
+
+initCarousel("teamCarousel","teamDots");
+window.dispatchEvent(new Event("resize"));
+};
+
+// ================= INTRO CONTROL =================
+
+window.addEventListener("load", () => {
+    const intro = document.getElementById("intro");
+    const video = document.getElementById("introVideo");
+
+    // Prevent scroll during intro
+    document.body.style.overflow = "hidden";
+
+    video.onended = () => {
+        endIntro();
+    };
+
+    window.skipIntro = function(){
+        endIntro();
+    };
+
+    function endIntro(){
+        intro.classList.add("fade-out");
+
+        setTimeout(()=>{
+            intro.style.display = "none";
+            document.body.style.overflow = "auto"; // restore scroll
+        },1000);
+    }
+});
+window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const bg = document.querySelector(".bg-video");
+
+    bg.style.transform = `translateY(${scrollY * 0.2}px) scale(1.05)`;
+});
+
+const neon = document.querySelector(".neon-light");
+
+document.addEventListener("mousemove", (e) => {
+
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+
+    neon.style.background = `
+        radial-gradient(circle at ${x}% ${y}%, rgba(255,0,128,0.18), transparent 40%),
+        radial-gradient(circle at ${100 - x}% ${100 - y}%, rgba(0,245,255,0.15), transparent 40%)
+    `;
+});
+
+// ================= BUTTON INTERACTION =================
+
+const enterBtn = document.getElementById("enterBtn");
+
+enterBtn.addEventListener("click", function(e){
+
+    // trigger glow
+    enterBtn.classList.add("glow", "ripple");
+
+    // remove effect after animation
+    setTimeout(()=>{
+        enterBtn.classList.remove("glow", "ripple");
+    },600);
+
+    // OPTIONAL: enhance scroll feel
+    const target = document.getElementById("events");
+
+    setTimeout(()=>{
+        target.scrollIntoView({
+            behavior: "smooth"
+        });
+    },200);
+});
+
+window.addEventListener("resize", () => {
+  for(let id in carousels){
+    carousels[id].visible = getVisibleCards();
+    updateCarousel(id);
+  }
+});
+</script>
+
+</body>
+</html>
